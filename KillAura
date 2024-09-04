@@ -1,0 +1,315 @@
+while wait(1)
+
+local args = {
+    [1] = workspace:WaitForChild("NPCs"):WaitForChild("The_Rake"),
+    [2] = workspace:WaitForChild("NPCs"):WaitForChild("The_Rake"):WaitForChild("Head"),
+    [3] = {
+        ["Customs"] = {
+            ["Pickup"] = {
+                ["GrabStaminaUsage"] = 15,
+                ["ThrowStaminaUsage"] = 25
+            },
+            ["RegisterHit"] = {
+                ["Hitter"] = {
+                    [1] = "Char",
+                    [2] = "Right Arm"
+                },
+                ["SwingWait"] = 2,
+                ["Range"] = 2.5,
+                ["BreakType"] = 1,
+                ["StaminaUsage"] = 45,
+                ["DebounceTime"] = 3,
+                ["ForceMulti"] = 1,
+                ["SwingTime"] = 0.7,
+                ["Damage"] = 50
+            },
+            ["Revive"] = {
+                ["Time"] = 10,
+                ["AnimSpeed"] = 1
+            },
+            ["DoorKick"] = {
+                ["StaminaUsage"] = 10,
+                ["Range"] = 3.5,
+                ["DebounceTime"] = 1,
+                ["Hitter"] = {
+                    [1] = "Char",
+                    [2] = "Right Leg"
+                },
+                ["SwingWait"] = 0.4,
+                ["ForceMulti"] = 1,
+                ["SwingTime"] = 0.2,
+                ["Damage"] = 21
+            }
+        },
+        ["SlashStages"] = 3,
+        ["RandomSwingSound"] = false,
+        ["RunIdle"] = true,
+        ["Fatal"] = false,
+        ["CanClash"] = false,
+        ["RakeDamage"] = 28,
+        ["StaminaUsage"] = 5,
+        ["Targets"] = {
+            [1] = "Humanoid",
+            [2] = "NPC"
+        },
+        ["ExecuteSettings"] = {
+            ["Enabled"] = false,
+            ["CanBreak"] = false,
+            ["StaminaUsage"] = 35
+        },
+        ["AntiCrouch"] = false,
+        ["Handle"] = {
+            [1] = "Char",
+            [2] = "Torso"
+        },
+        ["RotVel"] = 15,
+        ["M3HitCombo"] = false,
+        ["Damage"] = 12,
+        ["BreakSettings"] = {
+            ["Enabled"] = true,
+            ["ExplodeHead"] = false,
+            ["BleedKill"] = false,
+            ["RArm"] = {
+                ["Dmg"] = 9,
+                ["BleedDmg"] = 0,
+                ["BleedStep"] = 0,
+                ["BleedTime"] = 0
+            },
+            ["BreakType"] = "BoneBreak",
+            ["Head"] = {
+                ["Dmg"] = 0.1,
+                ["BleedTime"] = 0,
+                ["BleedDmg"] = 0,
+                ["CantBreak"] = true,
+                ["BleedStep"] = 0
+            },
+            ["LLeg"] = {
+                ["Dmg"] = 14,
+                ["BleedDmg"] = 0,
+                ["BleedStep"] = 0,
+                ["BleedTime"] = 0
+            },
+            ["CanDismember"] = false,
+            ["RLeg"] = {
+                ["Dmg"] = 14,
+                ["BleedDmg"] = 0,
+                ["BleedStep"] = 0,
+                ["BleedTime"] = 0
+            },
+            ["LArm"] = {
+                ["Dmg"] = 14,
+                ["BleedDmg"] = 0,
+                ["BleedStep"] = 0,
+                ["BleedTime"] = 0
+            },
+            ["CanBreak"] = false
+        },
+        ["BlockSettings"] = {
+            ["MultipleBlocking"] = false,
+            ["SlowDown"] = 10,
+            ["Enabled"] = false,
+            ["HitFlinchTime"] = 0.5,
+            ["Strength"] = 1,
+            ["StaminaUsage"] = 0.175
+        },
+        ["Blood"] = {
+            ["Enabled"] = true,
+            ["Enabled2"] = false,
+            ["A"] = {
+                ["RepeatCount"] = 1,
+                ["UpVector"] = Vector3.new(0, -5, 0),
+                ["MaxYAngle"] = 50,
+                ["RepeatTick"] = 0,
+                ["WidthScale"] = 1.5,
+                ["Amount"] = {
+                    [1] = 2,
+                    [2] = 4
+                },
+                ["Speed"] = 100,
+                ["Spread"] = {
+                    [1] = -15,
+                    [2] = 15
+                },
+                ["Size"] = 1.75
+            },
+            ["B"] = {
+                ["RepeatCount"] = 5,
+                ["UpVector"] = Vector3.new(0, 7.5, 0),
+                ["Speed"] = 5,
+                ["Amount"] = {
+                    [1] = 1,
+                    [2] = 1
+                },
+                ["RepeatTick"] = 0.5,
+                ["Spread"] = {
+                    [1] = -30,
+                    [2] = 30
+                },
+                ["WidthScale"] = 0.5,
+                ["Size"] = 1
+            }
+        },
+        ["SlowDown"] = {
+            ["Enabled"] = false,
+            ["AntiSprint"] = false,
+            ["Amount"] = 0
+        },
+        ["EquipAnimSpeed"] = 1,
+        ["Sharp"] = false,
+        ["AttackSlowDown"] = {
+            ["Enabled"] = true,
+            ["AntiSprint"] = false,
+            ["Amount"] = -5
+        },
+        ["EquipTime"] = 0.35,
+        ["Combo"] = {
+            ["Enabled"] = true,
+            ["OnePerson"] = false,
+            ["ConcusseStrength"] = 1,
+            ["KnockTime"] = 1.25,
+            ["ForceMulti"] = 2,
+            ["Multi"] = 1.35,
+            ["ConcusseTime"] = 0.8,
+            ["CanConcusse"] = true
+        },
+        ["DCancelGuns"] = true,
+        ["RakeStuns"] = 1,
+        ["Mains"] = {
+            ["S1"] = {
+                ["BleedTime"] = 0,
+                ["BleedTick"] = 0,
+                ["ComboEndTime"] = 0.8,
+                ["SoundPart"] = {
+                    [1] = "Char",
+                    [2] = "Right Arm"
+                },
+                ["MissSlowDown"] = false,
+                ["FlinchTime"] = 0.2,
+                ["ForceMulti"] = 1,
+                ["ForceUpVec"] = Vector3.new(0, 1.25, 0),
+                ["ConcusseTime"] = 0,
+                ["DebounceTime"] = 0.45,
+                ["MaxHits"] = 1,
+                ["KnockTime"] = 0,
+                ["SwingWait"] = 0.08,
+                ["CanKnock"] = false,
+                ["DmgMulti2"] = 1,
+                ["ConcusseStrength"] = 1,
+                ["Hitter"] = {
+                    [1] = "Char",
+                    [2] = "Right Arm"
+                },
+                ["AnimSpeed"] = 1,
+                ["CanConcusse"] = false,
+                ["Force"] = 4,
+                ["KnockMode"] = "Default",
+                ["BleedDmg"] = 0,
+                ["SwingTime"] = 0.18,
+                ["DmgMulti"] = 1
+            },
+            ["S2"] = {
+                ["BleedTime"] = 0,
+                ["BleedTick"] = 0,
+                ["ComboEndTime"] = 0.8,
+                ["SoundPart"] = {
+                    [1] = "Char",
+                    [2] = "Left Arm"
+                },
+                ["MissSlowDown"] = false,
+                ["FlinchTime"] = 0.2,
+                ["ForceMulti"] = 1,
+                ["ForceUpVec"] = Vector3.new(0, 1.25, 0),
+                ["ConcusseTime"] = 0,
+                ["DebounceTime"] = 0.45,
+                ["MaxHits"] = 1,
+                ["KnockTime"] = 0,
+                ["SwingWait"] = 0.11,
+                ["CanKnock"] = false,
+                ["DmgMulti2"] = 1,
+                ["ConcusseStrength"] = 1,
+                ["Hitter"] = {
+                    [1] = "Char",
+                    [2] = "Left Arm"
+                },
+                ["AnimSpeed"] = 1,
+                ["CanConcusse"] = false,
+                ["Force"] = 4.5,
+                ["KnockMode"] = "Default",
+                ["BleedDmg"] = 0,
+                ["SwingTime"] = 0.18,
+                ["DmgMulti"] = 1
+            },
+            ["S3"] = {
+                ["BleedTime"] = 0,
+                ["BleedTick"] = 0,
+                ["ComboEndTime"] = 0.8,
+                ["SoundPart"] = {
+                    [1] = "Char",
+                    [2] = "Right Arm"
+                },
+                ["MissSlowDown"] = true,
+                ["FlinchTime"] = 0.3,
+                ["ForceMulti"] = 1,
+                ["ForceUpVec"] = Vector3.new(0, 1.25, 0),
+                ["ConcusseTime"] = 0,
+                ["DebounceTime"] = 0.55,
+                ["MaxHits"] = 1,
+                ["KnockTime"] = 0,
+                ["SwingWait"] = 0.05,
+                ["CanKnock"] = false,
+                ["DmgMulti2"] = 1,
+                ["ConcusseStrength"] = 1,
+                ["Hitter"] = {
+                    [1] = "Char",
+                    [2] = "Right Arm"
+                },
+                ["AnimSpeed"] = 0.837,
+                ["CanConcusse"] = false,
+                ["Force"] = 5,
+                ["KnockMode"] = "Head",
+                ["BleedDmg"] = 0,
+                ["SwingTime"] = 0.2,
+                ["DmgMulti"] = 1.2
+            },
+            ["Finish"] = {
+                ["BleedTick"] = 0,
+                ["Hitter"] = {
+                    [1] = "Char",
+                    [2] = "Right Leg"
+                },
+                ["ForceMulti"] = 1,
+                ["BleedTime"] = 0,
+                ["SwingWait"] = 1.1,
+                ["MaxHits"] = 1,
+                ["DebounceTime"] = 2.5,
+                ["HealMulti"] = 0.45,
+                ["DmgMulti2"] = 1,
+                ["AnimSpeed"] = 1,
+                ["Force"] = 2.5,
+                ["ForceUpVec"] = Vector3.new(0, -1.5, 0),
+                ["SoundPart"] = {
+                    [1] = "Char",
+                    [2] = "Torso"
+                },
+                ["BleedDmg"] = 0,
+                ["SwingTime"] = 0.3,
+                ["DmgMulti"] = 1
+            }
+        },
+        ["AntiJump"] = false,
+        ["Range"] = 20,
+        ["BlockHitStrength"] = 1,
+        ["TrailEnabled"] = false
+    },
+    [4] = {} --[[DUPLICATE]],
+    [5] = 3,
+    [6] = false,
+    [7] = "\195\177\216\170\217\136\217\130\217\129 \216\185\217\134 \216\167\216\179\216\170\216\174\216\175\216" ..
+        "\167\217\133 \216\167\217\132\216\186\216\180",
+    [8] = "Slash"
+}
+
+args[4] = args[3].Mains.S3
+workspace:WaitForChild("NPCs"):WaitForChild("The_Rake"):WaitForChild("RakeFolder"):WaitForChild("PlayerStuff"):WaitForChild("Events"):WaitForChild("M_RMF"):FireServer(unpack(args))
+
+end
