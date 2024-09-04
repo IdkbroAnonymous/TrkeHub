@@ -1,5 +1,5 @@
 -- Inicialización de Rayfield
-local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/IdkbroAnonymous/TrkeHub/main/Rayfield"))()
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/IdkbroAnonymous/TrkeHub/main/TrkeHub"))()
 
 -- Crear una ventana
 local Window = Rayfield:CreateWindow({
