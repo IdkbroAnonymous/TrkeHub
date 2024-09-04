@@ -1,0 +1,54 @@
+-- Inicialización de Rayfield
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/IdkbroAnonymous/TrkeHub/main/TrkeHubxd"))()
+
+-- Library
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- Crear una ventana
+local Window = Rayfield:CreateWindow({
+    Name = "TrkeHub",
+    LoadingTitle = "Rayfield Interface Suite",
+    LoadingSubtitle = "by Sirius",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil,
+        FileName = "TrkeHub"
+    },
+    Discord = {
+        Enabled = false,
+        Invite = "noinvitelink",
+        RememberJoins = true
+    },
+    KeySystem = false,
+    KeySettings = {
+        Title = "Untitled",
+        Subtitle = "Key System",
+        Note = "No method of obtaining the key is provided",
+        FileName = "Key",
+        SaveKey = true,
+        GrabKeyFromSite = false,
+        Key = {"Hello"}
+    }
+})
+
+-- Crear una pestaña
+local Tab = Window:CreateTab("Aura Settings", 4483362458)
+
+-- Crear una sección en la pestaña
+local Section = Tab:CreateSection("Aura Controls")
+
+-- Crear un botón para Melee Kill Aura
+local MeleeKillAuraButton = Tab:CreateButton({
+    Name = "Enable Melee Kill Aura",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/IdkbroAnonymous/TrkeHub/main/Melee%20Kill%20Aura"))()
+    end
+})
+
+-- Crear un botón para Flare Gun Aura
+local FlareGunAuraButton = Tab:CreateButton({
+    Name = "Enable Flare Gun Aura",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/IdkbroAnonymous/TrkeHub/main/Flare%20Gun%20Aura"))()
+    end
+})
