@@ -1,0 +1,17 @@
+while wait(1) do
+
+local args = {
+    [1] = "\240\159\166\146",
+    [2] = game:GetService("Players").LocalPlayer.Character.FlareGun,
+    [3] = "MeonPCfFy]BFnedxtimQkhzH^JVtFN0",
+    [4] = 1,
+    [5] = workspace:WaitForChild("NPCs"):WaitForChild("The_Rake"):WaitForChild("Head"),
+    [6] = Vector3.new(1126.43531036376953, 1239.247379302978516, 1121.99652099609375),
+    [7] = Vector3.new(1120.7767922878265381, 1230.5355181097984314, 1230.331382155418396),
+    [10] = 811.392,
+    [11] = "HSP"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GunH"):FireServer(unpack(args))
+
+end
